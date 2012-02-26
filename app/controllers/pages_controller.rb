@@ -32,8 +32,10 @@ class PagesController < ApplicationController
     
     
     @test = @profile
-   
+    
+    if !Member.all.empty?
     @projects = Member.find(1).projects
+    end
   end
 
   # This action can be accessed normally, or as nested pages.

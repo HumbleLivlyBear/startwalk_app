@@ -3,11 +3,12 @@
 <%= @test %>
 <%= @test2 %>
 
-<% @projects.each do |a| %>
-<h3><%= link_to a.case_name, project_path(a) %></h3>
-<%= image_fu a.case_small_photo, '150x120' %>
-<li>提案者: <%= link_to a.hoster.first.member_name, member_path(a.hoster.first) %></li>
-<li><%= a.gist %></li>
-<li> 目前贊助金 <%= a.current_money %> / <%= a.wanted_money %></li>
-
+<% if @projects.present? %>
+	<% @projects.each do |a| %>
+	<h3><%= link_to a.case_name, project_path(a) %></h3>
+	<%= image_fu a.case_small_photo, '150x120' %>
+	<li>提案者: <%= link_to a.hoster.first.member_name, member_path(a.hoster.first) %></li>
+	<li><%= a.gist %></li>
+	<li> 目前贊助金 <%= a.current_money %> / <%= a.wanted_money %></li>
+	<% end %>
 <% end %>
