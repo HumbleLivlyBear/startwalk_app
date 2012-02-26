@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  member_id: 1
+  case_id: 1
+  sponsored_money: 1
+  selected_return: MyText
+
+two:
+  member_id: 1
+  case_id: 1
+  sponsored_money: 1
+  selected_return: MyText

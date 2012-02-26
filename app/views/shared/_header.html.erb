@@ -1,0 +1,25 @@
+<h1 id='logo'>
+  <%= link_to RefinerySetting.find_or_set(:site_name, "Company Name"), root_path %>
+</h1>
+<% if !current_partner.present? %>
+<%= link_to 'Login', pages_login_path %>
+<% elsif %>
+<%= link_to 'Logout', logout_path %>
+<% end %>
+
+<%= link_to '註冊'%>
+<%= link_to '登入'%>
+
+<%= link_to '夢想'%>
+<%= link_to '公益'%>
+<%= link_to '文創'%>
+<%= link_to '科技'%>
+<%= link_to '活動'%>
+<%= link_to '遊戲'%>
+<%= link_to '推薦'%>
+<%= link_to '已結束'%>
+
+<%= render(:partial => "/shared/menu", :locals => {
+             :dom_id => 'menu',
+             :css => 'menu'
+           }) %>

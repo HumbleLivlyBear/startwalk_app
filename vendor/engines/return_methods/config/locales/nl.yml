@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    return_methods:
+      title: Return Methods
+  admin:
+    return_methods:
+      actions:
+        create_new: Maak een nieuwe Return Method
+        reorder: Wijzig de volgorde van de Return Methods
+        reorder_done: Klaar met het wijzingen van de volgorde van de Return Methods
+      records:
+        title: Return Methods
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Return Methods. Druk op 'Maak een nieuwe Return Method' om de eerste aan te maken.
+      return_method:
+        view_live_html: Bekijk deze return method op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze return method
+        delete: Verwijder deze return method voor eeuwig
+  return_methods:
+    show:
+      other: Andere Return Methods

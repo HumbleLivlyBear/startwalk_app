@@ -1,0 +1,23 @@
+<h1>
+	真心贊助, 全心回餽
+</h1>
+
+<section>
+    <h3><%= @project.case_name %></h3>
+	<%= image_fu @project.case_small_photo, '150x120' %>
+	<li><%= @project.gist %></li>
+</section>
+
+<section>
+    <h1>回饋方式</h1>
+    <p>
+      贊助<%=raw @project.return_method.money1 %>, 可得<%=raw @project.return_method.method1 %>
+    </p>
+	<p>
+      贊助<%=raw @project.return_method.money2 %>, 可得<%=raw @project.return_method.method2 %>
+    </p>
+	<p>
+      贊助<%=raw @project.return_method.money3 %>, 可得<%=raw @project.return_method.method3 %>
+    </p>
+</section>
+

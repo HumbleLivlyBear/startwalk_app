@@ -1,0 +1,147 @@
+<% content_for :body_content_title do %>
+  <%= @return_method.method1 %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Project</h1>
+    <p>
+      <%=raw @return_method.project_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Money1</h1>
+    <p>
+      <%=raw @return_method.money1 %>
+    </p>
+  </section>
+  <section>
+    <h1>Money2</h1>
+    <p>
+      <%=raw @return_method.money2 %>
+    </p>
+  </section>
+  <section>
+    <h1>Money3</h1>
+    <p>
+      <%=raw @return_method.money3 %>
+    </p>
+  </section>
+  <section>
+    <h1>Money4</h1>
+    <p>
+      <%=raw @return_method.money4 %>
+    </p>
+  </section>
+  <section>
+    <h1>Money5</h1>
+    <p>
+      <%=raw @return_method.money5 %>
+    </p>
+  </section>
+  <section>
+    <h1>Money6</h1>
+    <p>
+      <%=raw @return_method.money6 %>
+    </p>
+  </section>
+  <section>
+    <h1>Money7</h1>
+    <p>
+      <%=raw @return_method.money7 %>
+    </p>
+  </section>
+  <section>
+    <h1>Money8</h1>
+    <p>
+      <%=raw @return_method.money8 %>
+    </p>
+  </section>
+  <section>
+    <h1>Money9</h1>
+    <p>
+      <%=raw @return_method.money9 %>
+    </p>
+  </section>
+  <section>
+    <h1>Money10</h1>
+    <p>
+      <%=raw @return_method.money10 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method1</h1>
+    <p>
+      <%=raw @return_method.method1 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method2</h1>
+    <p>
+      <%=raw @return_method.method2 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method3</h1>
+    <p>
+      <%=raw @return_method.method3 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method4</h1>
+    <p>
+      <%=raw @return_method.method4 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method5</h1>
+    <p>
+      <%=raw @return_method.method5 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method6</h1>
+    <p>
+      <%=raw @return_method.method6 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method7</h1>
+    <p>
+      <%=raw @return_method.method7 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method8</h1>
+    <p>
+      <%=raw @return_method.method8 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method9</h1>
+    <p>
+      <%=raw @return_method.method9 %>
+    </p>
+  </section>
+  <section>
+    <h1>Method10</h1>
+    <p>
+      <%=raw @return_method.method10 %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="return_methods">
+      <% @return_methods.each do |return_method| %>
+        <li>
+          <%= link_to return_method.method1, return_method_path(return_method) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

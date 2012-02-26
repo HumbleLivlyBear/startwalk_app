@@ -1,0 +1,119 @@
+<%= form_for [:admin, @return_method] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+          :object => @return_method,
+          :include_object_name => true
+        } %>
+  
+  <div class='field'>
+    <%= f.label :project_id -%>
+    <%= f.text_field :project_id, :class => 'larger widest'  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money1 -%>
+    <%= f.text_field :money1  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money2 -%>
+    <%= f.text_field :money2  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money3 -%>
+    <%= f.text_field :money3  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money4 -%>
+    <%= f.text_field :money4  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money5 -%>
+    <%= f.text_field :money5  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money6 -%>
+    <%= f.text_field :money6  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money7 -%>
+    <%= f.text_field :money7  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money8 -%>
+    <%= f.text_field :money8  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money9 -%>
+    <%= f.text_field :money9  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :money10 -%>
+    <%= f.text_field :money10  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method1 -%>
+    <%= f.text_field :method1  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method2 -%>
+    <%= f.text_field :method2  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method3 -%>
+    <%= f.text_field :method3  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method4 -%>
+    <%= f.text_field :method4  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method5 -%>
+    <%= f.text_field :method5  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method6 -%>
+    <%= f.text_field :method6  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method7 -%>
+    <%= f.text_field :method7  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method8 -%>
+    <%= f.text_field :method8  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method9 -%>
+    <%= f.text_field :method9  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :method10 -%>
+    <%= f.text_field :method10  -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.return_methods.return_method'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @return_method.method1)
+              } %>
+<% end -%>

@@ -1,0 +1,48 @@
+
+
+
+<% content_for :body_content_title do %>
+  <%= @member.member_name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Member Name</h1>
+    <p>
+      <%=raw @member.member_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Email</h1>
+    <p>
+      <%=raw @member.email %>
+    </p>
+  </section>
+  <section>
+    <h1>Member Photo</h1>
+    <p>
+      <%= image_fu @member.member_photo, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Bio</h1>
+    <p>
+      <%=raw @member.bio %>
+    </p>
+  </section>
+  <section>
+    <h1>Personal Link</h1>
+    <p>
+      <%=raw @member.personal_link %>
+    </p>
+  </section>
+  <section>
+    <h1>Password</h1>
+    <p>
+      <%=raw @member.password %>
+    </p>
+  </section>
+<% end %>
+
+
+<%= render :partial => "/shared/content_page" %>

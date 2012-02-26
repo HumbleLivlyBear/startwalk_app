@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    return_methods:
+      title: Return Methods
+  admin:
+    return_methods:
+      actions:
+        create_new: Lag en ny Return Method
+        reorder: Endre rekkefølgen på Return Methods
+        reorder_done: Ferdig å endre rekkefølgen Return Methods
+      records:
+        title: Return Methods
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Return Methods enda. Klikk på "Lag en ny Return Method" for å legge til din første return method.
+      return_method:
+        view_live_html: Vis hvordan denne return method ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne return method
+        delete: Fjern denne return method permanent
+  return_methods:
+    show:
+      other: Andre Return Methods

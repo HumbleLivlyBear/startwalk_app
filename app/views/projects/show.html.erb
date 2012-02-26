@@ -1,0 +1,81 @@
+<% content_for :body_content_title do %>
+  <%= @project.case_name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <section>
+    <h1>提案者</h1>
+    <p>
+      <%=raw @project.hoster.find(1).member_name %>
+    </p>
+  </section>
+
+  <section>
+    <p>
+      $ <%=raw @project.wanted_money %> / <%=raw @project.current_money %>
+    </p>
+  </section>
+  
+  <section>
+    <p>
+      這專案必須達到 <%=raw @project.current_money %> 才算成功
+    </p>
+  </section>
+  
+  <section>
+    <h1>Case Promote Photo</h1>
+    <p>
+      <%= image_fu @project.case_promote_photo, '400x300' %>
+    </p>
+  </section>
+
+  <section>
+    <h1>簡介</h1>
+    <p>
+      <%=raw @project.case_introduce %>
+    </p>
+  </section>
+
+  <section>
+    <h1>更新</h1>
+    <p>
+      <%=raw @project.case_update %>
+    </p>
+  </section>
+
+  <section>
+    <h1><%= link_to '我要贊助', project_support_path(@project) %></h1>
+    <% if @project.return_method.money1? %>
+    <p>
+      贊助<%=raw @project.return_method.money1 %>, 可得<%=raw @project.return_method.method1 %>
+    </p>
+	<% end %>
+	<% if @project.return_method.money2? %>
+	<p>
+      贊助<%=raw @project.return_method.money2 %>, 可得<%=raw @project.return_method.method2 %>
+    </p>
+	<% end %>
+	<% if @project.return_method.money3? %>
+	<p>
+      贊助<%=raw @project.return_method.money3 %>, 可得<%=raw @project.return_method.method3 %>
+    </p>
+	<% end %>
+  </section>
+
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="projects">
+      <% @projects.each do |project| %>
+        <li>
+          <%= link_to project.case_name, project_path(project) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

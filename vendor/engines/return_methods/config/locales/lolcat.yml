@@ -1,0 +1,25 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    return_methods:
+      title: Return Methods
+  admin:
+    return_methods:
+      actions:
+        create_new: CREATE NEW Return Method
+        reorder: REORDR Return Methods
+        reorder_done: DUN REORDERIN Return Methods
+      records:
+        title: Return Methods
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Return Methods YET. CLICK "CREATE NEW Return Method" 2 ADD UR FURST return method.
+      return_method:
+        view_live_html: VIEW DIS return method LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS return method
+        delete: REMOOV DIS return method FOREVR
+  return_methods:
+    show:
+      other: OTHR Return Methods

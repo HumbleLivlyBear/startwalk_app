@@ -1,0 +1,25 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    return_methods:
+      title: Return Methods
+  admin:
+    return_methods:
+      actions:
+        create_new: Add New Return Method
+        reorder: Reorder Return Methods
+        reorder_done: Done Reordering Return Methods
+      records:
+        title: Return Methods
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Return Methods yet. Click "Add New Return Method" to add your first return method.
+      return_method:
+        view_live_html: View this return method live <br/><em>(opens in a new window)</em>
+        edit: Edit this return method
+        delete: Remove this return method forever
+  return_methods:
+    show:
+      other: Other Return Methods

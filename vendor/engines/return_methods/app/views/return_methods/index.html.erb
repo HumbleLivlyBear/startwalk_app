@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="return_methods">
+    <% @return_methods.each do |return_method| %>
+      <li>
+        <%= link_to return_method.method1, return_method_path(return_method) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
