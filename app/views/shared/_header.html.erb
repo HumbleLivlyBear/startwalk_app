@@ -1,9 +1,9 @@
 <h1 id='logo'>
   <%= link_to RefinerySetting.find_or_set(:site_name, "Company Name"), root_path %>
 </h1>
-<% if !current_partner.present? %>
+<% if @current_patner.nil? %>
 <%= link_to 'Login', pages_login_path %>
-<% elsif %>
+<% else %>
 <%= link_to 'Logout', logout_path %>
 <% end %>
 

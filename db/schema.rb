@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120225161446) do
+ActiveRecord::Schema.define(:version => 20120226153651) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20120225161446) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "member_id"
+    t.integer  "fb_id"
   end
 
   add_index "members", ["id"], :name => "index_members_on_id"

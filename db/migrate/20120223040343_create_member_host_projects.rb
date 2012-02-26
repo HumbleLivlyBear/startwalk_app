@@ -1,6 +1,6 @@
 class CreateMemberHostProjects < ActiveRecord::Migration
   def self.up
-    drop_table :member_host_projects
+  # drop_table :member_host_projects
     
     create_table :member_host_projects do |t|
       t.integer :member_id

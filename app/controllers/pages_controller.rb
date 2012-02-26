@@ -21,20 +21,13 @@ class PagesController < ApplicationController
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
     
-    if params[:code].present?
-      #Rails.logger.info"xxxxxxxxxxxxxxxx    #{session[:current_url][0..session[:current_url].index("?")-1]}"
-      @oauth = Koala::Facebook::OAuth.new("295205770520844", "a0aa290ff9019b2acb2250be19998936", session[:current_url][0..session[:current_url].index("?")-1])
-      access_token = @oauth.get_access_token(params[:code])
-      @graph = Koala::Facebook::API.new(access_token)
-      @profile = @graph.get_object("me")
-    end
-    
-    
+    call_back
     
     @test = @profile
+    @test2 = @current_patner.nil?
     
     if !Member.all.empty?
-    @projects = Member.find(1).projects
+    # @projects = Member.find(1).projects
     end
   end
 
@@ -49,13 +42,8 @@ class PagesController < ApplicationController
   #   GET /about/mission
   #
   def show
-    if params[:code].present?
-      @oauth = Koala::Facebook::OAuth.new("295205770520844", "a0aa290ff9019b2acb2250be19998936", session[:current_url])
-      access_token = @oauth.get_access_token(params[:code])
-      @graph = Koala::Facebook::API.new(access_token)
-      @profile = @graph.get_object("me")
-    end
-    
+
+    call_back
     
     @page = Page.find("#{params[:path]}/#{params[:id]}".split('/').last)
 
@@ -68,6 +56,36 @@ class PagesController < ApplicationController
       end
     else
       error_404
+    end
+  end
+  
+  def call_back
+    if params[:code].present?
+      #Rails.logger.info"xxxxxxxxxxxxxxxx    #{session[:current_url][0..session[:current_url].index("?")-1]}"
+      @oauth = Koala::Facebook::OAuth.new("295205770520844", "a0aa290ff9019b2acb2250be19998936", session[:current_url][0..session[:current_url].index("?")-1])
+      access_token = @oauth.get_access_token(params[:code])
+      @graph = Koala::Facebook::API.new(access_token)
+      @profile = @graph.get_object("me")
+      #Rails.logger.info("XXXXXXXXXXXXX: id XXXXXXXX: #{@profile.id}")
+      @current_patner = find_or_create_member(@profile) # let current_partner combined with that member
+      Rails.logger.info"xxxxxxxxxxxxxxxx it is current_partner   #{@current_patner}"
+    end
+  end
+  
+  def find_or_create_member(profile)
+    if !Member.where("fb_id" => profile["id"]).empty?
+      Rails.logger.info"xxxxxxxxxxxxxxxx    function Error!!!!!!!"
+      Rails.logger.info"xxxxxxxxxxxxxxxx    #{profile["id"]}"
+      member = Member.where("fb_id" => profile["id"])
+      return member
+      Rails.logger.info"xxxxxxxxxxxxxxxx    function Error2222222222!!!!!!!"
+    else
+      Rails.logger.info"oooooooooooooooo    function Good!!!!!!!"
+      member = Member.new
+      member.fb_id = profile["id"]
+      member.member_name = profile["name"]
+      member.save
+      return member
     end
   end
 
