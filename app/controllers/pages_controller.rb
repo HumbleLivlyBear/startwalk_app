@@ -27,7 +27,7 @@ class PagesController < ApplicationController
     @test2 = @current_patner.nil?
     
     if !Member.all.empty?
-    # @projects = Member.find(1).projects
+     @projects = Member.find(1).projects
     end
   end
 
