@@ -7,6 +7,9 @@ source 'http://rubygems.org'
 
 gem 'sqlite3'
 
+gem 'capistrano' 
+gem 'capistrano-ext'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
