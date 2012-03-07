@@ -1,3 +1,22 @@
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="payPalForm">
+
+<INPUT TYPE="hidden" name="charset" value="utf-8">
+<input type="hidden" name="item_number" value="好東西">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="business" value="jackmodo2012@gmail.com">
+<input type="hidden" name="currency_code" value="TWD">
+<input type="hidden" name="return" value="http://freelanceswitch.com/payment-complete/">
+
+Item Details:<br /><input name="item_name" type="text" id="item_name"  size="45">
+<br /><br />
+Amount: <br /><input name="amount" type="text" id="amount" size="45">
+<br /><br />
+<input type="submit" name="Submit" value="Submit">
+
+</form>
+
+
 <% content_for :body_content_title do %>
   <%= @project.case_name %>
 <% end %>

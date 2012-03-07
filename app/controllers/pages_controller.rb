@@ -12,7 +12,8 @@ class PagesController < ApplicationController
      # test = request.url
     #Rails.logger.info("XXXXXXXXXXXXXXXXXXXXXX     #{session[:current_url]}")
     @oauth = Koala::Facebook::OAuth.new("295205770520844", "a0aa290ff9019b2acb2250be19998936", session[:current_url])
-    facebook_auth_url = @oauth.url_for_oauth_code
+    
+    facebook_auth_url = @oauth.url_for_oauth_code(:permissions => "email")
     redirect_to facebook_auth_url
   end
   
@@ -24,7 +25,9 @@ class PagesController < ApplicationController
     call_back
     
     @test = @profile
-    @test2 = @current_patner.nil?
+    # @test = @hello
+    # @test2 = @current_patner.nil?
+    @test2 = @user_email
     
     if !Member.all.empty?
      @projects = Member.find(1).projects
@@ -63,8 +66,15 @@ class PagesController < ApplicationController
     if params[:code].present?
       #Rails.logger.info"xxxxxxxxxxxxxxxx    #{session[:current_url][0..session[:current_url].index("?")-1]}"
       @oauth = Koala::Facebook::OAuth.new("295205770520844", "a0aa290ff9019b2acb2250be19998936", session[:current_url][0..session[:current_url].index("?")-1])
+      
       access_token = @oauth.get_access_token(params[:code])
       @graph = Koala::Facebook::API.new(access_token)
+      
+      # @profile = @graph.batch do |batch_api|
+      #        batch_api.get_object('me')
+      #        batch_api.put_wall_post('Making a post in a batch.')
+      #      end
+      
       @profile = @graph.get_object("me")
       #Rails.logger.info("XXXXXXXXXXXXX: id XXXXXXXX: #{@profile.id}")
       @current_patner = find_or_create_member(@profile) # let current_partner combined with that member
