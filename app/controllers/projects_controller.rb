@@ -10,15 +10,20 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    
     @project = Project.find(params[:id])
+    
+    # tt = aa.find(a)
+    
+    if ! @project.hoster.where("project_id= #{params[:id]}").present?
+      MemberHostProject.create!(member_id:@project.member_id,project_id:params[:id])
+    end
+    
+    
 
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @project in the line below:
     present(@page)
-  end
-  
-  def support
-    @project = Project.find(params[:id])
   end
 
 protected
