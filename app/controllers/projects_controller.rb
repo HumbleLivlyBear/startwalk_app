@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
       MemberHostProject.create!(member_id:@project.member_id,project_id:params[:id])
     end
     
-    
+    #aaaa
 
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @project in the line below:
